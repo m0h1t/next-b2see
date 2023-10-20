@@ -15,8 +15,8 @@ const NavBar = () => {
     };
 
     const links: LabelProps[] = [
-        { label: "Titles", href: "/titles" },
-        { label: "Nothing", href: "/titles" }
+        { label: "Regitser", href: "/register" },
+        { label: "Show users", href: "/users" }
     ];
 
     return (
@@ -24,7 +24,7 @@ const NavBar = () => {
             <Link href={'/'} className='space-x-4 h-14 items-center'>
                 <img className='space-x-6 h-14 items-center p-2' src="https://upload.wikimedia.org/wikipedia/commons/3/30/NeXT_logo.svg" alt="NEXT B2-SEE" />
             </Link>
-            <ul className='flex space-x-6' style={{ fontWeight: 'bold' }}>
+            <ul className='flex space-x-6'>
                 {links.map(link =>
                     <Link
                         key={link.href}
