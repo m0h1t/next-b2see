@@ -1,11 +1,39 @@
-"use server"
+"use server";
 
-import { connect } from "../mongodb";
-import User from '../models/user.model';
+import { User } from "@/app/users/page";
+import { revalidateTag } from "next/cache";
 
 export const getUsers = async (): Promise<any> => {
-    connect();
-    const usersQuery = User.find().populate({ path: 'user', model: User });
-    const users = await usersQuery.exec();
-    return users;
-}
+	const users = await fetch("http://localhost:3000/api/users", {
+		cache: "no-cache",
+		next: {
+			tags: ["users"],
+		},
+	});
+	return users.json();
+};
+
+export const addUserToDb = async (f: FormData): Promise<any> => {
+	const name = f.get("name")?.toString();
+	const userName = f.get("userName")?.toString();
+	const years = f.get("years")?.toString() ?? "0";
+	const type = f.get("type")?.toString();
+	const user: User = {
+		name: name,
+		userName: userName,
+		years: +years,
+		type: type
+	};
+
+	await fetch("http://localhost:3000/api/users", {
+		method: "PUT",
+		body: JSON.stringify(user),
+		headers: {
+			"Content-Type": "application/json"
+		}
+	});
+
+	
+
+	revalidateTag("users");
+};
