@@ -9,8 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.8.6",
+    "@apollo/server": "^4.9.4",
+    "@as-integrations/next": "^2.0.2",
     "@prisma/client": "^5.5.0",
     "@radix-ui/themes": "^2.0.0",
+    "graphql": "^16.8.1",
     "mongodb": "^6.2.0",
     "mongoose": "",
     "next": "13.5.6",

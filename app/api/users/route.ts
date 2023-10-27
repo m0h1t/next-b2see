@@ -37,7 +37,7 @@ export const POST = async (request: NextRequest): Promise<any> => {
 		return NextResponse.json(validation.error.errors, { status: 400 });
 	}
 
-	db.users.update({
+	await db.users.update({
 		where: {
 			userName: body.userName
 		}, data: {
@@ -57,6 +57,6 @@ export const DELETE = async (request: NextRequest): Promise<any> => {
 	const validation = deleteUserSchema.safeParse(body);
 	if (!validation.success) return NextResponse.json(validation.error.errors, { status: 400 });
 
-	db.users.delete({ where: { userName: body.userName } });
+	await db.users.delete({ where: { userName: body.userName } });
 	return NextResponse.json("success", { status: 200 });
 }
