@@ -12,7 +12,7 @@ export type User = {
 
 // eslint-disable-next-line @next/next/no-async-client-component
 const Users = async () => {
-  let users: User[] = await getUsers();
+  let users: User[] = [];
 
   return <div className=" bg-black">
     <AddUser />
