@@ -4,7 +4,7 @@ import { User } from "@/app/users/page";
 import { revalidateTag } from "next/cache";
 
 export const getUsers = async (): Promise<any> => {
-	const users = await fetch("http://localhost:3000/api/users", {
+	const users = await fetch(`${process.env.BASE_URL}/api/users`, {
 		cache: "no-cache",
 		next: {
 			tags: ["users"],

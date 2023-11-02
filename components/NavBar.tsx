@@ -1,5 +1,6 @@
 import React from "react"
 import Link from "next/link";
+import Image from "next/image";
 
 const NavBar = () => {
     const navStyles: React.CSSProperties = {
@@ -22,7 +23,11 @@ const NavBar = () => {
     return (
         <nav className="space-x-6 mb-5 h-14 items-center" style={navStyles}>
             <Link href={"/"} className="space-x-4 h-14 items-center">
-                <img className="space-x-6 h-14 items-center p-2" src="https://upload.wikimedia.org/wikipedia/commons/3/30/NeXT_logo.svg" alt="NEXT B2-SEE" />
+                <Image
+                    className="space-x-6 h-14 items-center p-2"
+                    src="https://upload.wikimedia.org/wikipedia/commons/3/30/NeXT_logo.svg"
+                    alt="NEXT B2-SEE"
+                />
             </Link>
             <ul className="flex space-x-6">
                 {links.map(link =>
