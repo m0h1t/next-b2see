@@ -1,5 +1,5 @@
 import AddUser from "@/components/AddUser";
-import { getUsers } from "@/libs/actions/user.actions";
+// import { getUsers } from "@/libs/actions/user.actions";
 
 export type User = {
   id?: string,
@@ -12,7 +12,7 @@ export type User = {
 
 // eslint-disable-next-line @next/next/no-async-client-component
 const Users = async () => {
-  let users: User[] = await getUsers();
+  let users: User[] = [];
 
   return <div className=" bg-black">
     <AddUser />

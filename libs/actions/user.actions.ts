@@ -25,13 +25,13 @@ export const addUserToDb = async (f: FormData): Promise<any> => {
 		type: type
 	};
 
-	await fetch(`https://next-b2see-6499p9s6t-mohit-hiralals-projects.vercel.app/api/users`, {
-		method: "PUT",
-		body: JSON.stringify(user),
-		headers: {
-			"Content-Type": "application/json"
-		}
-	});
+	// await fetch(`https://next-b2see-6499p9s6t-mohit-hiralals-projects.vercel.app/api/users`, {
+	// 	method: "PUT",
+	// 	body: JSON.stringify(user),
+	// 	headers: {
+	// 		"Content-Type": "application/json"
+	// 	}
+	// });
 
 	
 
