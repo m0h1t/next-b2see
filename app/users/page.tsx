@@ -1,5 +1,5 @@
 import AddUser from "@/components/AddUser";
-import { getUsers } from "@/libs/actions/user.actions";
+// import { getUsers } from "@/libs/actions/user.actions";
 
 export type User = {
   id?: string,
