@@ -25,7 +25,7 @@ export const addUserToDb = async (f: FormData): Promise<any> => {
 		type: type
 	};
 
-	await fetch("http://localhost:3000/api/users", {
+	await fetch(`${process.env.BASE_URL}/api/users`, {
 		method: "PUT",
 		body: JSON.stringify(user),
 		headers: {
