@@ -4,7 +4,7 @@ import { User } from "@/app/users/page";
 import { revalidateTag } from "next/cache";
 
 export const getUsers = async (): Promise<any> => {
-	const users = await fetch(`${process.env.BASE_URL}/api/users`, {
+	const users = await fetch(`https://next-b2see-6499p9s6t-mohit-hiralals-projects.vercel.app/api/users`, {
 		cache: "no-cache",
 		next: {
 			tags: ["users"],
@@ -25,7 +25,7 @@ export const addUserToDb = async (f: FormData): Promise<any> => {
 		type: type
 	};
 
-	await fetch(`${process.env.BASE_URL}/api/users`, {
+	await fetch(`https://next-b2see-6499p9s6t-mohit-hiralals-projects.vercel.app/api/users`, {
 		method: "PUT",
 		body: JSON.stringify(user),
 		headers: {
